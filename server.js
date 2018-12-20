@@ -13,6 +13,11 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// API routes - in serve.js for simplicity of demo
+app.get("/allusers", function(req, res) {
+  res.send("You hit the all users route!");
+})
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
