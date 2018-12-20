@@ -1,3 +1,19 @@
+# Heroku Deploy
+
+https://arcane-caverns-22869.herokuapp.com/
+
+# Build steps on top of boilerplate
+
+0. git init and create remote repo
+
+1. Add .gitignore to base repo, ignore node_modules/
+
+2. yarn install
+
+3. update this readme
+
+4. push to heroku: heroku create, git push heroku master
+
 # Create React Express App
 
 ## About This Boilerplate
