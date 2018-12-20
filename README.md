@@ -22,6 +22,8 @@ CHECKPOINT: First heroku deploy worked!
 
 7. Navigate to the heroku app, navigate to the app and its resources tab, then provision an mlab mongodb. That will set the MONGODB_URI environment variable on heroku, which the start code should aready be looking for in production.
 
+8. IMPORTANT: `heroku run yarn seed` - send remote commands to your heroku server! Cool! You can use `heroku logs` and `heroku logs --tail` to check your work
+
 # Create React Express App
 
 ## About This Boilerplate
