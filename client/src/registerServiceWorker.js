@@ -100,6 +100,7 @@ function checkValidServiceWorker(swUrl) {
 }
 
 export function unregister() {
+  console.log('Not a progressive webapp, unregistering the service worker');
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready.then(registration => {
       registration.unregister();
