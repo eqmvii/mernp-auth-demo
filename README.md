@@ -12,7 +12,11 @@ https://arcane-caverns-22869.herokuapp.com/
 
 3. update this readme
 
-4. push to heroku: heroku create, git push heroku master
+4. push to heroku: `heroku create`, `git push heroku master`, `heroku open`
+
+CHECKPOINT: First heroku deploy worked!
+
+5. `yarn add mongoose` and prepare seed file
 
 # Create React Express App
 
