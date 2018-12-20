@@ -7,6 +7,7 @@ const app = express();
 // DB
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mernp-auth-thursday-12202018");
+const db = require("./models");
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -15,8 +16,11 @@ if (process.env.NODE_ENV === "production") {
 
 // API routes - in serve.js for simplicity of demo
 app.get("/allusers", function(req, res) {
-  res.send("You hit the all users route!");
-})
+  db.User
+    .find({})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
 
 // Send every request to the React app
 // Define any API routes before this runs
