@@ -16,7 +16,11 @@ https://arcane-caverns-22869.herokuapp.com/
 
 CHECKPOINT: First heroku deploy worked!
 
-5. `yarn add mongoose` and prepare seed file
+5. `yarn add mongoose` and prepare seed file in scripts/seedDB.js
+
+6. Add an all users route, a models folder, run the seeds, and res.JSON all users
+
+7. Navigate to the heroku app, navigate to the app and its resources tab, then provision an mlab mongodb. That will set the MONGODB_URI environment variable on heroku, which the start code should aready be looking for in production.
 
 # Create React Express App
 
