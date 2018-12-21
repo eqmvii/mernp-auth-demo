@@ -24,9 +24,19 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  handleLogIn = (event) => {
+    event.preventDefault();
+    console.log("login clicked!");
+    console.log(this);
+    this.setState({loggedIn: true});
+
+    // Could also have handleLogIn not be an arrow function
+    // and instead .bind(this) in the onClick call
+  }
+
   render() {
     if (this.state.loggedIn) {
-      return (<h1>You are logged in!</h1>);
+      return (<h1>You are logged in! Enjoy the application!</h1>);
     }
     else {
       return (
@@ -34,8 +44,13 @@ class App extends Component {
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>All Users Test</h2>
+            <br />
             <a href="/allusers">All Users</a>
+            <br />
           </div>
+          <br />
+          <button onClick={this.handleLogIn}>Log In</button>
+          <br />
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
