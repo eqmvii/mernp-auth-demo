@@ -4,25 +4,36 @@ https://arcane-caverns-22869.herokuapp.com/
 
 # Build steps on top of boilerplate
 
-0. git init and create remote repo
+* git init and create remote repo
 
-1. Add .gitignore to base repo, ignore node_modules/
+* Add .gitignore to base repo, ignore node_modules/
 
-2. yarn install
+* yarn install
 
-3. update this readme
+* update this readme
 
-4. push to heroku: `heroku create`, `git push heroku master`, `heroku open`
+* Check index.js for service worker stuff; remove or unregister it to prevent caching issue!
 
-CHECKPOINT: First heroku deploy worked!
+* push to heroku: `heroku create`, `git push heroku master`, `heroku open`
 
-5. `yarn add mongoose` and prepare seed file in scripts/seedDB.js
+**CHECKPOINT:** First heroku deploy worked!
 
-6. Add an all users route, a models folder, run the seeds, and res.JSON all users
+* `yarn add mongoose` and prepare seed file in scripts/seedDB.js.
 
-7. Navigate to the heroku app, navigate to the app and its resources tab, then provision an mlab mongodb. That will set the MONGODB_URI environment variable on heroku, which the start code should aready be looking for in production.
+* Add an all users route, a models folder, run the seeds, and res.JSON all users. Be sure to run `mongod` locally to get mongo working if necessary.
 
-8. IMPORTANT: `heroku run yarn seed` - send remote commands to your heroku server! Cool! You can use `heroku logs` and `heroku logs --tail` to check your work
+* Navigate to the heroku app, navigate to the app and its resources tab, then provision an mlab mongodb. That will set the MONGODB_URI environment variable on heroku, which the start code should aready be looking for in production.
+
+* IMPORTANT: `heroku run yarn seed` - send remote commands to your heroku server! Cool! You can use `heroku logs` and `heroku logs --tail` to check your work
+
+**CHECKPOINT:** Locally http://localhost:3001/allusers should work, on heroku the main page and allusers should work
+
+* TODO: Check out lessonplans/15-week/supplemental/sequelize-passport-example
+
+
+
+
+
 
 # Create React Express App
 
