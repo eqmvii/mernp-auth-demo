@@ -27,11 +27,21 @@ class App extends Component {
   handleLogIn = (event) => {
     event.preventDefault();
     console.log("login clicked!");
-    console.log(this);
-    this.setState({loggedIn: true});
+    // this.setState({loggedIn: true});
 
     // Could also have handleLogIn not be an arrow function
     // and instead .bind(this) in the onClick call
+
+    axios.post('/login', {
+      username: 'admin',
+      password: 'password'
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render() {
