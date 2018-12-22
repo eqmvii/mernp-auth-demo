@@ -12,6 +12,7 @@ class App extends Component {
   componentDidMount() {
     console.log("componentDidMount lifecycle method called");
     this.getAllUsers();
+    this.checkForLogin();
   }
 
   getAllUsers() {
@@ -36,10 +37,27 @@ class App extends Component {
       username: 'admin',
       password: 'password'
     })
-    .then(function (response) {
+    .then((response) => {
       console.log(response);
+      if (response.data === "YOU ARE LOGGED IN") {
+        this.setState({loggedIn: true});
+      }
     })
-    .catch(function (error) {
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
+  checkForLogin = () => {
+    axios.get("/api/user_data")
+    .then((response) => {
+      console.log(response);
+      if (response.data.loggedIn) {
+        console.log(`User ${response.data.username} already logged in via passport session!`)
+        this.setState({loggedIn: true});
+      }
+    })
+    .catch((error) => {
       console.log(error);
     });
   }

@@ -39,6 +39,19 @@ app.post("/login", passport.authenticate("local"), function(req, res) {
   res.json("YOU ARE LOGGED IN");
 });
 
+app.get("/api/user_data", function(req, res) {
+  if (!req.user) {
+    res.json({loggedIn: false});
+  }
+  else {
+    res.json({
+      loggedIn: true,
+      username: req.user.username,
+      password: req.user.password
+    });
+  }
+});
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

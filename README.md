@@ -28,7 +28,7 @@ https://arcane-caverns-22869.herokuapp.com/
 
 **CHECKPOINT:** Locally http://localhost:3001/allusers should work, on heroku the main page and allusers should work
 
-* TODO: Check out lessonplans/15-week/supplemental/sequelize-passport-example
+* Incorporate passport; check out lessonplans/15-week/supplemental/sequelize-passport-example
 
 
 
